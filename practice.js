@@ -91,7 +91,7 @@ multiply(4, 3, function(answer){
 */
 
 function contains(arr,name,cb){
-  for(i=0;i<arr.length;){
+  for(let i=0;i<arr.length;i++){
     if(arr[i]===name){
       cb(true)
     }else{
@@ -119,8 +119,17 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
-
-
+function uniq(arr,cb){
+  for(i=0;i<arr.length;i++){
+    if(arr[i]=){}
+  }
+}
+// var result = [];
+// a.forEach(function(item) {
+//   if(result.indexOf(item) < 0) {
+//       result.push(item);
+//   }
+// });
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -136,7 +145,11 @@ uniq(names, function(uniqArr){
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-//Code Here 
+function each(arr,cb){
+  for(i=0;i<arr.length;i++){
+    cb(arr[i],i)
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -153,7 +166,13 @@ each(names, function(item, indice){
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
-// Code here
+function getUserById(users,id,cb){
+  for(let i=0; i<users.length;i++){
+    if( users[i].id == id ){
+      cb(users[i])
+    }
+  }
+}
 
 // Do not edit the code below.
 var users = [
