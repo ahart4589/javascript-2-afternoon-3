@@ -119,17 +119,19 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
-function uniq(arr,cb){
-  for(i=0;i<arr.length;i++){
-    if(arr[i]=){}
-  }
-}
-// var result = [];
-// a.forEach(function(item) {
-//   if(result.indexOf(item) < 0) {
-//       result.push(item);
-//   }
-// });
+ function uniq(arr,cb){
+   
+   for(i=0;i<arr.length;i++){
+     for(j=i+1;j<arr.length;j++){
+      if(arr[i]===arr[j]){
+        arr.splice(i,1) 
+        j--
+       } 
+     }
+     
+    } cb(arr)
+   } 
+
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -199,4 +201,4 @@ var users = [
 getUserById(users, '16t', function(user){
   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
 });
-// Do not edit the code above.
+// Do not edit the code above
